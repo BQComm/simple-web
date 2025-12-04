@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="icon" type="image/png" href="/favicon.png" />
+  <title>Independent Designer</title>
+
+  <!-- Google Font: Changa One -->
+  <link href="https://fonts.googleapis.com/css2?family=Changa+One&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome (CDN actualizado, solo CSS) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Configuración Tailwind -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            changa: ['"Changa One"', "sans-serif"],
+          },
+          colors: {
+            primary: "#457eff",
+            hoverPrimary: "#ff7878",
+            textColor: "#303030",
+            bgColor: "#fffaf5",
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeInUp {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  body {
+  background-color: #f7f2e8; /* tu color crema */
+  background-image:
+    linear-gradient(#d1d1d1 1px, transparent 0.2px),
+    linear-gradient(90deg, #d1d1d1 1px, transparent 1px);
+  background-size: 40px 40px; /* tamaño del cuadro */
+}
+  
+</style>
+
+
+</head>
+
+<body class="bg-bgColor font-changa text-textColor flex flex-col items-center p-6 animate-fadeInUp">
+
+  <!-- Foto de Perfil -->
+  <img 
+    src="/b boy.jpg"
+    alt="Foto de perfil"
+    class="w-32 h-32 rounded-full object-cover mb-6 border-4 border-textColor"
+  />
+
+  <!-- Título -->
+  <h1 class="text-4xl mb-8 text-center">Bryan Quiroz – Designer</h1>
+
+  <!-- Subtítulo -->
+  <p class="text-2xl mb-4 text-center">Contact me</p>
+
+  <!-- Contenedor de Botones -->
+  <div class="w-full max-w-sm flex flex-col gap-4">
+
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/bryan-quiroz-215057126/" 
+       class="w-full py-4 text-center rounded-xl border-4 border-textColor 
+              bg-primary text-textColor text-xl transition-all duration-300
+              hover:bg-hoverPrimary hover:scale-[1.03] flex items-center justify-center gap-2">
+       <i class="fa-brands fa-linkedin"></i> LinkedIn
+    </a>
+
+    <!-- Behance -->
+    <a href="https://www.behance.net/bryan-stephen" 
+       class="w-full py-4 text-center rounded-xl border-4 border-textColor 
+              bg-primary text-textColor text-xl transition-all duration-300
+              hover:bg-hoverPrimary hover:scale-[1.03] flex items-center justify-center gap-2">
+       <i class="fa-brands fa-behance"></i> Portfolio
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/bryansteph.mp4/" 
+       class="w-full py-4 text-center rounded-xl border-4 border-textColor 
+              bg-primary text-textColor text-xl transition-all duration-300
+              hover:bg-hoverPrimary hover:scale-[1.03] flex items-center justify-center gap-2">
+       <i class="fa-brands fa-instagram"></i> Instagram
+    </a>
+
+    <!-- GitHub -->
+    <a href="https://github.com/BQComm" 
+       class="w-full py-4 text-center rounded-xl border-4 border-textColor 
+              bg-primary text-textColor text-xl transition-all duration-300
+              hover:bg-hoverPrimary hover:scale-[1.03] flex items-center justify-center gap-2">
+       <i class="fa-brands fa-github"></i> GitHub
+    </a>
+
+    <!-- Email -->
+    <a href="mailto:info@bryanquiroz.com"
+       class="w-full py-4 text-center rounded-xl border-4 border-textColor 
+              bg-primary text-textColor text-xl transition-all duration-300
+              hover:bg-hoverPrimary hover:scale-[1.03] flex items-center justify-center gap-2">
+       <i class="fa-solid fa-envelope"></i> Email
+    </a>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/50762419969"
+       class="w-full py-4 text-center rounded-xl border-4 border-textColor 
+              bg-primary text-textColor text-xl transition-all duration-300
+              hover:bg-hoverPrimary hover:scale-[1.03] flex items-center justify-center gap-2">
+       <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+
+  </div>
+
+</body>
+</html>

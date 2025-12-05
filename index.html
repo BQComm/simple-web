@@ -51,14 +51,40 @@
     animation: fadeInUp 0.8s ease-out forwards;
   }
 
-  body {
-  background-color: #f7f2e8; /* tu color crema */
+body {
+  background-color: #f7f2e8;
   background-image:
     linear-gradient(#d1d1d1 1px, transparent 0.2px),
     linear-gradient(90deg, #d1d1d1 1px, transparent 1px);
-  background-size: 40px 40px; /* tamaño del cuadro */
+  background-size: 40px 40px;
+  transition: background-position 0.1s linear;
 }
-  
+
+
+
+
+body, a, button {
+  cursor: none !important;
+}
+
+#customCursor {
+  width: 14px;
+  height: 14px;
+  background-color: #ff7878; /* rojo */
+  border: 2px solid #303030;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+a:hover ~ #customCursor,
+button:hover ~ #customCursor {
+  background-color: #457eff !important; /* azul */
+}
+
 </style>
 
 
@@ -131,6 +157,47 @@
     </a>
 
   </div>
+
+  <div id="customCursor"></div>
+  
+<script>
+  const cursor = document.getElementById("customCursor");
+
+  // Seguir el mouse
+  window.addEventListener("mousemove", (e) => {
+    cursor.style.left = e.pageX + "px";
+    cursor.style.top = e.pageY + "px";
+  });
+
+  // Detectar enlaces y botones
+  const interactive = document.querySelectorAll("a, button");
+
+  interactive.forEach((el) => {
+    el.addEventListener("mouseenter", () => {
+      cursor.style.backgroundColor = "#457eff"; // azul
+      cursor.style.transform = "translate(-50%, -50%) scale(1.5)";
+    });
+    el.addEventListener("mouseleave", () => {
+      cursor.style.backgroundColor = "#ff7878"; // rojo
+      cursor.style.transform = "translate(-50%, -50%) scale(1)";
+    });
+  });
+</script>
+
+<script>
+  const body = document.body;
+
+  window.addEventListener("mousemove", (e) => {
+    const x = e.clientX / window.innerWidth;   // 0 → 1
+    const y = e.clientY / window.innerHeight;  // 0 → 1
+
+    // Movimiento invertido y sutil
+    const offsetX = (x * -20); // mueve 20px máximo hacia la izquierda/derecha
+    const offsetY = (y * -20); // mueve 20px máximo hacia arriba/abajo
+
+    body.style.backgroundPosition = `${offsetX}px ${offsetY}px`;
+  });
+</script>
 
 </body>
 </html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="icon" type="image/png" href="/favicon.png" />
+  <title>Planes para redes</title>
+
+  <!-- Font Awesome (CDN actualizado, solo CSS) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Changa:wght@300;400;600;700&family=Changa+One&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Changa One', 'sans-serif'],
+            body: ['Changa', 'sans-serif'],
+          },
+          colors: {
+            primary: '#457eff',
+            hoverPrimary: "#ff7878",
+            textColor: "#303030",
+            bgColor: "#fffaf5",
+          },
+          boxShadow: {
+            card: '8px 8px 0px #4F7DF3',
+          }
+        }
+      }
+    }
+  </script>
+
+   <style>
+    /* Fade in general */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fadeInUp {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    /* Fondo cuadriculado */
+    body {
+      background-image:
+        linear-gradient(#d1d1d1 1px, transparent 0.2px),
+        linear-gradient(90deg, #d1d1d1 1px, transparent 1px);
+      background-size: 40px 40px;
+      transition: background-position 0.1s linear;
+    }
+
+    /* Cursor personalizado (desktop) */
+    body, a, button {
+      cursor: none;
+    }
+
+    #customCursor {
+      width: 14px;
+      height: 14px;
+      background-color: #ff7878;
+      border: 2px solid #303030;
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: background-color 0.15s ease, transform 0.15s ease;
+    }
+
+    /* Desactivar cursor personalizado en tablets y móviles */
+    @media (max-width: 1024px) {
+      body, a, button {
+        cursor: auto !important;
+      }
+
+      #customCursor {
+        display: none;
+      }
+    }
+  </style>
+
+</head>
+
+<body class="bg-bgColor font-body text-gray-900">
+
+  <section class="max-w-7xl mx-auto px-6 py-16">
+
+    <h1 class="text-4xl text-textColor md:text-5xl font-heading mb-16 text-center">
+      Planes para redes sociales
+    </h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+
+      <!-- Plan Microlancer -->
+      <div class="bg-bgColor rounded-2xl border-2 border-black p-6
+            relative flex flex-col h-full
+            transition-all duration-300
+            hover:shadow-card hover:-translate-y-1">
+        <span class="absolute top-4 right-4 w-3 h-3 bg-hoverPrimary border-2 border-textColor rounded-full"></span>
+
+        <h2 class="text-2xl font-heading text-textColor">Plan Microlancer</h2>
+        <p class="text-primary mb-4">Adecuado para micro-empresas</p>
+        <div class="border-t border-textColor mb-4"></div>
+
+        <p class="font-semibold mb-2 text-textColor">Solo creación de contenido:</p>
+        <ul class="list-disc list-inside space-y-1 mb-4">
+          <li>15 stories</li>
+          <li>10 posts</li>
+          <li>2 reels / videos</li>
+          <li>Edición de perfiles</li>
+          <li>Copywriting</li>
+        </ul>
+
+        <p class="font-semibold mb-2 text-textColor">Para 2 redes sociales:</p>
+        <div class="flex gap-4 mb-6 text-2xl text-primary">
+          <i class="fa-brands fa-instagram text-textColor"></i>
+          <i class="fa-brands fa-facebook text-textColor"></i>
+        </div>
+        <div class="mt-auto pt-6">
+         <p class="text-sm text-primary mb-1">mensual</p>
+        <div class="text-center">
+            <p class="text-3xl sm:text-4xl md:text-5xl text-textColor font-heading">
+            B/.100<sup class="text-sm sm:text-base md:text-xl align-super">00</sup>
+            </p>
+        </div>
+            <span class="block mt-4 h-2 w-1/4 bg-hoverPrimary mx-auto border-2 border-textColor rounded-md"></span>
+        </div>
+
+      </div>
+
+      <!-- Plan Profesional -->
+      <div class="bg-bgColor rounded-2xl border-2 border-black p-6
+            relative flex flex-col h-full
+            transition-all duration-300
+            hover:shadow-card hover:-translate-y-1">
+        <span class="absolute top-4 right-4 w-3 h-3 bg-hoverPrimary border-2 border-textColor rounded-full"></span>
+
+        <h2 class="text-2xl font-heading text-textColor">Plan Profesional</h2>
+        <p class="text-primary mb-4">Para negocios digitales</p>
+        <div class="border-t border-textColor mb-4"></div>
+
+        <p class="font-semibold mb-2 text-textColor">Marketing de contenido:</p>
+        <ul class="list-disc list-inside space-y-1 mb-4">
+          <li>Stories diarias</li>
+          <li>20 posts</li>
+          <li>5 reels / videos</li>
+          <li>Community Management</li>
+          <li>Manejo de tienda (si aplica)</li>
+          <li>Ads Pagos</li>
+          <li>Edición de perfiles</li>
+          <li>Copywriting</li>
+        </ul>
+
+        <p class="font-semibold mb-6 text-textColor">Hasta 4 redes (a selección)</p>
+
+        <div class="mt-auto pt-6">
+            <p class="text-sm text-primary mb-1">mensual</p>
+            <div class="text-center">
+                <p class="text-3xl sm:text-4xl md:text-5xl text-textColor font-heading">
+                B/.250<sup class="text-sm sm:text-base md:text-xl align-super">00</sup>
+                </p>
+            </div>
+             <span class="block mt-4 h-2 w-1/4 bg-hoverPrimary mx-auto border-2 border-textColor rounded-md"></span>
+            </div>
+      </div>
+
+      <!-- Plan Influencer -->
+      <div class="bg-bgColor rounded-2xl border-2 border-black p-6
+            relative flex flex-col h-full
+            transition-all duration-300
+            hover:shadow-card hover:-translate-y-1">
+        <span class="absolute top-4 right-4 w-3 h-3 bg-hoverPrimary border-2 border-textColor rounded-full"></span>
+
+        <h2 class="text-2xl text-textColor font-heading">Plan Influencer</h2>
+        <p class="text-primary mb-4">Para figuras públicas</p>
+        <div class="border-t border-textColor mb-4"></div>
+
+        <p class="font-semibold mb-2 text-textColor">Marketing de contenido:</p>
+        <ul class="list-disc list-inside space-y-1 mb-4">
+          <li>Stories diarias</li>
+          <li>15+ posts</li>
+          <li>15+ reels / videos / shorts</li>
+          <li>Community Management</li>
+          <li>Manejo de tienda (si aplica)</li>
+          <li>Ads Pagos</li>
+          <li>Edición de perfiles</li>
+          <li>Copywriting</li>
+        </ul>
+
+        <p class="font-semibold mb-4 text-textColor">Hasta 4 redes (a selección)</p>
+
+        <div class="mt-auto pt-6">
+            <!-- Desde + mensual en fila -->
+            <div class="flex items-center gap-2 mb-2">
+                <span class="inline-block bg-hoverPrimary text-textColor text-sm px-2 py-1 rounded border-2 border-textColor">
+                Desde...
+                </span>
+
+                <p class="text-sm text-primary">
+                mensual
+                </p>
+            </div>
+
+            <!-- Precio centrado -->
+            <div class="text-center">
+                <p class="text-3xl sm:text-4xl md:text-5xl text-textColor font-heading">
+                B/.350<sup class="text-sm sm:text-base md:text-xl align-super">00</sup>
+                </p>
+            </div>
+        <span class="block mt-4 h-2 w-1/4 bg-hoverPrimary mx-auto border-2 border-textColor rounded-md"></span>
+        </div>
+      </div>
+
+      <!-- Plan Corporativo -->
+      <div class="bg-bgColor rounded-2xl border-2 border-black p-6
+            relative flex flex-col h-full
+            transition-all duration-300
+            hover:shadow-card hover:-translate-y-1">
+        <span class="absolute top-4 right-4 w-3 h-3 bg-hoverPrimary border-2 border-textColor rounded-full"></span>
+
+        <h2 class="text-2xl text-textColor font-heading">Plan Corporativo</h2>
+        <p class="text-primary mb-4">Para las grandes campañas</p>
+        <div class="border-t border-textColor mb-4"></div>
+
+        <p class="mb-6 text-textColor font-semibold">¿Quieres desarrollar una campaña estratégica de medios digitales para tu negocio?</p>
+
+        <ul class="list-disc list-inside space-y-1 mb-6 text-textColor">
+          <li>KPI</li>
+          <li>Resultados medibles</li>
+          <li>Etc...</li>
+        </ul>
+
+        <div class="mt-auto pt-6">
+            <span class="inline-block bg-hoverPrimary text-textColor text-sm px-2 py-1 rounded mb-2 border-2 border-textColor">
+            Desde...
+            </span>
+        <div class="text-center">
+            <p class="text-3xl sm:text-4xl md:text-5xl text-textColor font-heading">
+            B/.400<sup class="text-xl align-super">00</sup>
+            </p>
+        </div>
+        <span class="block mt-4 h-2 w-1/4 bg-hoverPrimary mx-auto border-2 border-textColor rounded-md"></span>
+        </div>
+
+
+      </div>
+
+    </div>
+
+    <!-- footer -->
+    <div class="mt-14 bg-hoverPrimary font-heading text-textColor text-center px-6 py-4 rounded-xl border-2 border-textColor">
+      Todos los planes (excepto el microlancer) incluyen reportes mensuales del estado completo de sus redes. Precios sujetos a cambios.
+    </div>
+
+    
+<a href="/index.html"
+   rel="noopener noreferrer"
+   class="fixed bottom-6 left-6
+          bg-bgColor w-16 h-16 rounded-xl border-4 border-textColor
+          text-textColor text-xl
+          transition-all duration-300 hover:bg-hoverPrimary hover:scale-[1.03]
+          flex items-center justify-center gap-2
+          z-50">
+  <i class="fa-solid fa-backward"></i>
+</a>
+
+
+
+  </section>
+  <!-- Cursor -->
+  <div id="customCursor"></div>
+
+  <!-- Scripts -->
+  <script>
+    /* Cursor personalizado solo en desktop */
+    if (window.matchMedia('(min-width: 1025px)').matches) {
+      const cursor = document.getElementById('customCursor');
+
+      window.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.pageX + 'px';
+        cursor.style.top = e.pageY + 'px';
+
+        const x = e.clientX / window.innerWidth;
+        const y = e.clientY / window.innerHeight;
+
+        document.body.style.backgroundPosition =
+          `${x * -20}px ${y * -20}px`;
+      });
+
+      document.querySelectorAll('a, button').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          cursor.style.backgroundColor = '#457eff';
+          cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+        });
+        el.addEventListener('mouseleave', () => {
+          cursor.style.backgroundColor = '#ff7878';
+          cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+        });
+      });
+    }
+  </script>
+</body>
+</html>
+
